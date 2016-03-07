@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f7f7f7"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btn_fragmet_brandsale_sousuo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="7"
+            android:background="@drawable/shape"
+            android:drawableLeft="@drawable/s_search_btn"
+            android:paddingLeft="10dp"
+            android:paddingRight="140dp"
+            android:text="@string/fragment_bandsale_sousuo" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/me_sign_score" />
+
+        <TextView
+            android:id="@+id/iv_fragmet_brandsale_sign"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fragment_bandsale_qiandao" />
+    </LinearLayout>
+</LinearLayout>

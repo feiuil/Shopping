@@ -5,6 +5,7 @@ import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.uil.administrator.shopping.Adapter.BaseActivity;
+import com.uil.administrator.shopping.Fragment.Fragment_BrandSale;
 import com.uil.administrator.shopping.R;
 
 /**
@@ -57,7 +58,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             case R.id.pinpai_main:
                 getSupportFragmentManager()
                         .beginTransaction()
-//                        .replace(R.id.fl_main,new DiscoverFragment())
+                        .replace(R.id.fl_main, new Fragment_BrandSale())
                         .commit();
                 break;
             case R.id.jinbi_main:
