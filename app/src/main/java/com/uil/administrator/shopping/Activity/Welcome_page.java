@@ -68,7 +68,6 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
             int imageId = getResources().getIdentifier("y_guide_"+i,"drawable",getPackageName());
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(imageId);
-
             listImage.add(imageView);
         }
 
