@@ -12,6 +12,9 @@ import com.uil.administrator.shopping.R;
 
 import java.util.Random;
 
+/**
+ * 欢迎页
+ */
 public class Welcome_Image extends BaseActivity {
 
     private static final String TAG ="print" ;

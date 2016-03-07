@@ -1,29 +1,34 @@
 package com.uil.administrator.shopping.Activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-
+import android.widget.LinearLayout;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.TextView;
 
 import com.uil.administrator.shopping.Adapter.BaseActivity;
 import com.uil.administrator.shopping.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  *  首次打开的介绍（Viewpager）页面
  */
-public class Welcome_page extends BaseActivity implements ViewPager.OnPageChangeListener {
+public class Welcome_page extends BaseActivity implements ViewPager.OnPageChangeListener, View.OnClickListener {
 
-    private Button btn;            // 进入主页的按钮
+
     private ViewPager viewPager;
     private List<ImageView> listImage;
     private MyViewPagerAdapter adapter;
+
+    private LinearLayout ll_nav;
+    private LinearLayout.LayoutParams layoutParams;//定义一个布局参数，用于设置控件中的布局属性
     /**
      * 是否可以跳转
      */
@@ -40,9 +45,15 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
      */
     @Override
     protected void initView() {
-        btn = (Button) findViewById(R.id.welcome_btnInto);
-        viewPager = (ViewPager) findViewById(R.id.welcome_ViewPager);
+        viewPager = (ViewPager) findViewById(R.id.vp_welcome);
         viewPager.addOnPageChangeListener(this);
+
+        ll_nav = (LinearLayout) findViewById(R.id.ll_nav);
+        ll_nav.setGravity(Gravity.CENTER);
+
+        layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        layoutParams.leftMargin = 10;
+        layoutParams.rightMargin = 10;
     }
 
     /**
@@ -60,11 +71,29 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
             listImage.add(imageView);
         }
 
+
         // 设置适配器
         adapter = new MyViewPagerAdapter();
         viewPager.setAdapter(adapter);
-
-
+      /*  for(int i = 0; i < listImage.size(); i++){
+            TextView tv = new TextView(this);
+            tv.setTag(i);
+            tv.setOnClickListener(this);
+            tv.setTextColor(Color.GREEN);
+            if(i == 0){
+                tv.setText("现在就购");
+            } else if(i == 1){
+                tv.setText("现在就抢");
+            }
+            else if(i == 2){
+                tv.setText("现在就定");
+            }
+            else if(i == 3){
+                tv.setText("现在开启");
+            }
+            ll_nav.addView(tv, layoutParams);
+        }
+*/
     }
 
     /**
@@ -75,15 +104,7 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
      */
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-        if(position == 0){
-            btn.setText("现在就购");
-        }else if(position == 1){
-            btn.setText("现在就抢");
-        }else if(position == 2){
-            btn.setText("现在就定");
-        }else if(position == 3){
-            btn.setText("现在开启");
-        }
+
         if ( position==(listImage.size()-1) && positionOffset == 0 && positionOffsetPixels == 0) {
             if (canJump) {//表示可以到最后一页，可以跳转
                 startActivity(new Intent(Welcome_page.this, MainActivity.class));
@@ -106,6 +127,13 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         } else {
             canJump = false;
         }
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        int index = (Integer)v.getTag();
+        viewPager.setCurrentItem(index);
     }
 
     /**

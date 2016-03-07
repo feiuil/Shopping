@@ -8,7 +8,7 @@ import com.uil.administrator.shopping.Adapter.BaseActivity;
 import com.uil.administrator.shopping.R;
 
 /**
- *  首页
+ *  首页00
  */
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
