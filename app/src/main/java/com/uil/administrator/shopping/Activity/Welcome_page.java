@@ -1,5 +1,6 @@
 package com.uil.administrator.shopping.Activity;
 
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *  首次打开的介绍页面
+ *  首次打开的介绍（Viewpager）页面
  */
 public class Welcome_page extends BaseActivity implements ViewPager.OnPageChangeListener {
 
@@ -23,6 +24,11 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
     private ViewPager viewPager;
     private List<ImageView> listImage;
     private MyViewPagerAdapter adapter;
+    /**
+     * 是否可以跳转
+     */
+    private boolean canJump;
+
 
     @Override
     protected int contentView() {
@@ -48,7 +54,7 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         // 自定义ImageView保存图片到list中
         listImage = new ArrayList<>();
         for (int i = 1 ; i <= 4 ; i++){
-            int imageId = getResources().getIdentifier("y_guide_"+i,"mipmap",getPackageName());
+            int imageId = getResources().getIdentifier("y_guide_"+i,"drawable",getPackageName());
             ImageView imageView = new ImageView(this);
             imageView.setImageResource(imageId);
 
@@ -79,6 +85,13 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         }else if(position == 3){
             btn.setText("现在开启");
         }
+        if ( position==(listImage.size()-1) && positionOffset == 0 && positionOffsetPixels == 0) {
+            if (canJump) {//表示可以到最后一页，可以跳转
+                startActivity(new Intent(Welcome_page.this, MainActivity.class));
+                // 事件执行一次后进行重置,避免事件多次触发
+                canJump = false;
+            }
+        }
     }
 
     @Override
@@ -88,7 +101,12 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
 
     @Override
     public void onPageScrollStateChanged(int state) {
-
+        if (state == ViewPager.SCROLL_STATE_DRAGGING) {
+            // Log.d(TAG, "onPageScrollStateChanged: "+lastIndex);
+            canJump = true;
+        } else {
+            canJump = false;
+        }
     }
 
     /**
@@ -116,5 +134,10 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView(listImage.get(position));
         }
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 }
