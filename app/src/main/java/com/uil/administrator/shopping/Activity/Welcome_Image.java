@@ -1,6 +1,7 @@
 package com.uil.administrator.shopping.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.widget.ImageView;
 
@@ -40,14 +41,32 @@ public class Welcome_Image extends BaseActivity {
         Random ra =new Random();
         int imageId = getResources().getIdentifier("iv_guide_"+ra.nextInt(3),"mipmap",getPackageName());
         iv.setImageResource(imageId);
-
-        // 等待3秒后执行跳转
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(Welcome_Image.this,Welcome_page.class));
-            }
-        },3000);
+        SharedPreferences sp = getSharedPreferences("data", MODE_PRIVATE);
+        boolean isFirst = sp.getBoolean("isFirst", true);
+        if (isFirst == true) {
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean("isFirst", false);
+            //4.提交
+            editor.commit();
+            //应用首次启动
+            // 等待3秒后执行跳转
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(Welcome_Image.this, Welcome_page.class));
+                    finish();
+                }
+            }, 2000);
+        }else{
+            //二次启动
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(Welcome_Image.this, MainActivity.class));
+                    finish();
+                }
+            }, 2000);
+        }
     }
 }
 
