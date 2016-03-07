@@ -27,8 +27,7 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
     private List<ImageView> listImage;
     private MyViewPagerAdapter adapter;
 
-    private LinearLayout ll_nav;
-    private LinearLayout.LayoutParams layoutParams;//定义一个布局参数，用于设置控件中的布局属性
+
     /**
      * 是否可以跳转
      */
@@ -47,13 +46,6 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
     protected void initView() {
         viewPager = (ViewPager) findViewById(R.id.vp_welcome);
         viewPager.addOnPageChangeListener(this);
-
-        ll_nav = (LinearLayout) findViewById(R.id.ll_nav);
-        ll_nav.setGravity(Gravity.CENTER);
-
-        layoutParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        layoutParams.leftMargin = 10;
-        layoutParams.rightMargin = 10;
     }
 
     /**
@@ -67,6 +59,8 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         for (int i = 1 ; i <= 4 ; i++){
             int imageId = getResources().getIdentifier("y_guide_"+i,"drawable",getPackageName());
             ImageView imageView = new ImageView(this);
+
+
             imageView.setImageResource(imageId);
             listImage.add(imageView);
         }
@@ -75,25 +69,7 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
         // 设置适配器
         adapter = new MyViewPagerAdapter();
         viewPager.setAdapter(adapter);
-      /*  for(int i = 0; i < listImage.size(); i++){
-            TextView tv = new TextView(this);
-            tv.setTag(i);
-            tv.setOnClickListener(this);
-            tv.setTextColor(Color.GREEN);
-            if(i == 0){
-                tv.setText("现在就购");
-            } else if(i == 1){
-                tv.setText("现在就抢");
-            }
-            else if(i == 2){
-                tv.setText("现在就定");
-            }
-            else if(i == 3){
-                tv.setText("现在开启");
-            }
-            ll_nav.addView(tv, layoutParams);
-        }
-*/
+
     }
 
     /**
@@ -104,6 +80,7 @@ public class Welcome_page extends BaseActivity implements ViewPager.OnPageChange
      */
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
 
         if ( position==(listImage.size()-1) && positionOffset == 0 && positionOffsetPixels == 0) {
             if (canJump) {//表示可以到最后一页，可以跳转
