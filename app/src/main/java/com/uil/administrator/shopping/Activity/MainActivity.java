@@ -2,7 +2,6 @@ package com.uil.administrator.shopping.Activity;
 
 
 import com.uil.administrator.shopping.Adapter.BaseActivity;
-import com.uil.administrator.shopping.Adapter.BaseFragment;
 import com.uil.administrator.shopping.R;
 
 /**
