@@ -5,7 +5,6 @@ import android.widget.FrameLayout;
 import android.widget.RadioGroup;
 
 import com.uil.administrator.shopping.Adapter.BaseActivity;
-import com.uil.administrator.shopping.Adapter.BaseFragment;
 import com.uil.administrator.shopping.R;
 
 /**
