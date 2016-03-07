@@ -13,7 +13,7 @@ import com.uil.administrator.shopping.R;
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
     private FrameLayout fl;//主页面中的fragment占位frameLayout
-    private RadioGroup rg;//主页面的选择按钮组
+    private RadioGroup rg;//主页面的选择按钮组22
 
 
     /*
