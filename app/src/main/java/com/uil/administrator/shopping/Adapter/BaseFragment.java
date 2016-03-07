@@ -49,4 +49,5 @@ public abstract class BaseFragment extends Fragment {
 
     // 用于数据加载的方法
     protected void dataLoad(){}
+
 }
