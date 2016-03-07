@@ -4,10 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.MainActivity">
 
-    <TextView
-        android:text="欢迎光临"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/fl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_main"></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_main"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/home_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_main_selector"
+            android:text="首页"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/text_selector"
+            />
+        <RadioButton
+            android:id="@+id/pinpai_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_pinpai_selector"
+            android:text="品牌特卖"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/text_selector"
+            />
+        <RadioButton
+            android:id="@+id/jinbi_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_jinbi_selector"
+            android:text="金币商城"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/text_selector"
+            />
+        <RadioButton
+            android:id="@+id/diy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_diy_selector"
+            android:text="DIY"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/text_selector"
+            />
+        <RadioButton
+            android:id="@+id/main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/btn_mian_selector"
+            android:text="我"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@color/text_selector"
+            />
+    </RadioGroup>
+
+
 </RelativeLayout>
