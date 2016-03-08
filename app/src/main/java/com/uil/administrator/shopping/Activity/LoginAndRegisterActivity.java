@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.uil.administrator.shopping.Adapter.BaseActivity;
-import com.uil.administrator.shopping.Fragment.Fragment_Mine;
 import com.uil.administrator.shopping.R;
 
 /**
