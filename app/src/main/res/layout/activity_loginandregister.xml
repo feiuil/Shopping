@@ -60,15 +60,27 @@
         android:orientation="horizontal">
 
         <Button
+            android:layout_marginLeft="80dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/register"/>
+            android:text="@string/register"
+            android:background="@drawable/btn_score_limit_bg"
+            android:layout_gravity="center"
+            />
 
         <Button
+            android:layout_marginLeft="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"/>
+            android:text="@string/login"
+            android:background="@drawable/btn_prize_red_state"
+            android:layout_gravity="center"
+            />
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 
 
