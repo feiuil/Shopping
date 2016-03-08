@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="individualCenter">个人中心</string>
+    <string name="signIn">签 到</string>
+    <string name="earnCoins">赚金币</string>
+    <string name="welcome">欢迎来到网购潮</string>
+    <string name="loginAndRegister">登录/注册</string>
+    <string name="feedback">意见反馈</string>
+    <string name="systemSettings">系统设置</string>
+    <string name="aboutshopping">关于网购潮</string>
+
+
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+
+
+    <string name="emailOrNicknames">电子邮箱或昵称</string>
+    <string name="password">密码</string>
+
+</resources>

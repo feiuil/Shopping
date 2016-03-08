@@ -21,6 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!--注册/登陆页面-->
+        <activity android:name=".Activity.LoginAndRegisterActivity"></activity>
+        <!--意见反馈页面-->
+        <activity android:name=".Activity.FeedbackActivity"></activity>
+        <!--系统设置页面-->
+        <activity android:name=".Activity.SystemSettingsActivity"></activity>
+        <!--关于网购潮页面-->
+        <activity android:name=".Activity.AboutShoppingActivity"></activity>
+
     </application>
 
 </manifest>

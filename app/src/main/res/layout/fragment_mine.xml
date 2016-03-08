@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--我页面布局-->
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/d_32x32_email_none"
+            android:layout_gravity="left"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="7.5"
+            android:layout_height="wrap_content"
+            android:text="@string/individualCenter"
+            android:background="#ffffff"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/me_sign_score"
+                android:background="#ffffff"
+                android:layout_gravity="left"
+
+
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="right">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/signIn"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="@string/earnCoins"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/more_title_bg" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome"
+                android:textColor="#fdfcfc"
+                android:textSize="16sp" />
+
+            <!--登陆注册-->
+            <Button
+                android:id="@+id/loginAndRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/x_goods_detail_like_num_bg"
+                android:onClick="loginAndRegister"
+                android:text="@string/loginAndRegister"
+                android:textColor="#fdfcfc"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </FrameLayout>
+    <!--意见反馈-->
+    <Button
+        android:id="@+id/feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="#ffffff"
+        android:onClick="feedback"
+        android:text="@string/feedback"
+        android:textSize="16sp" />
+    <!--系统设置-->
+    <Button
+        android:id="@+id/systemSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="#ffffff"
+        android:onClick="systemSettings"
+        android:text="@string/systemSettings"
+        android:textSize="16sp" />
+    <!--关于网购潮-->
+    <Button
+        android:id="@+id/aboutshopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:background="#ffffff"
+        android:onClick="aboutshopping"
+        android:text="@string/aboutshopping"
+        android:textSize="16sp" />
+
+
+</LinearLayout>
