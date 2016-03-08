@@ -7,6 +7,8 @@ import android.widget.RadioGroup;
 import com.uil.administrator.shopping.Adapter.BaseActivity;
 import com.uil.administrator.shopping.Fragment.Fragment_DIY;
 import com.uil.administrator.shopping.Fragment.Fragment_Mine;
+import com.uil.administrator.shopping.Fragment.Fragment_BrandSale;
+import com.uil.administrator.shopping.Fragment.Fragment_Goldmall;
 import com.uil.administrator.shopping.R;
 
 /**
@@ -68,16 +70,16 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 //                        .replace(R.id.fl_main,new MassageFragment())
                         .commit();
                 break;
-            case R.id.diy://DIY页面
+            case R.id.diy:
                 getSupportFragmentManager()
                         .beginTransaction()
-                      .replace(R.id.fl_main, new Fragment_DIY())
+//                        .replace(R.id.fl_main,new MassageFragment())
                         .commit();
                 break;
-            case R.id.main://我页面
+            case R.id.main:
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .replace(R.id.fl_main, new Fragment_Mine())
+//                        .replace(R.id.fl_main,new MyselfFragment())
                         .commit();
                 break;
         }
